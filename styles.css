@@ -2233,7 +2233,7 @@ footer {
     }
 
     .info-tile {
-        min-width: 336px;
+        min-width: 85vw;
         position: absolute;
         left: -48px;
     }
