@@ -207,6 +207,7 @@ body {
 .hero-title {
     text-align: center;
     margin-bottom: 2rem;
+    margin-left: 5rem;
 }
 
 .hero-title h1 {
@@ -1364,6 +1365,7 @@ footer {
     margin-bottom: 0.5rem;
     font-weight: 700;
     white-space: nowrap;
+    text-align: left;
 }
 
 .subtitle {
@@ -1550,7 +1552,7 @@ footer {
 /* Rotating Tiles Controls */
 .tiles-controls {
     position: absolute;
-    right: -60px;
+    right: 90px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -1850,6 +1852,15 @@ footer {
 
 /* Responsive design for highlights */
 @media (max-width: 768px) {
+
+    .hero-title {
+        margin-left: 0;
+    }
+
+    .hero-title h1 {
+        text-align: center;
+    }
+
     .highlights-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -2005,7 +2016,7 @@ footer {
     }
 
     .rotating-tiles {
-        max-width: 600px;
+        max-width: 70%;
         margin: 0 auto;
     }
 
@@ -2103,13 +2114,17 @@ footer {
 
     /* Position tile controls below content */
     .tiles-controls {
-        display: block;
-        position: relative;
-        right: 0;
-        flex-direction: row;
+        display: flex;
+        position: absolute;
+        right: -60px;
+        flex-direction: column;
         justify-content: center;
-        margin-top: 2rem;
+        margin-top: 0rem;
         gap: 2rem;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .tile-control-btn {
@@ -2119,8 +2134,9 @@ footer {
 
     /* Convert highlights to vertical stack */
     .highlights-grid {
-        flex-direction: column;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.5fr;
+        gap: 0.5rem;
     }
 
     .highlight-card {
@@ -2210,5 +2226,19 @@ footer {
 
     .gradient {
         --size: 400px;
+    }
+
+    .info-tile {
+        min-width: 336px;
+        position: absolute;
+        left: -48px;
+    }
+
+    .tiles-controls {
+        display: none;
+    }
+
+    .highlights-grid{
+        grid-template-columns: 1fr;
     }
 } 
