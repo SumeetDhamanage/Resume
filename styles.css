@@ -47,7 +47,7 @@ body {
 }
 
 .container {
-    max-width: 100vw;
+    width: 100vw;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
@@ -690,7 +690,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-btn {
-        display: block;
+        display: contents;
     }
 
     .nav-links {
@@ -1976,4 +1976,239 @@ footer {
 /* Update particles opacity */
 #particles-js {
     opacity: 0.6;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .hero-left {
+        text-align: center;
+    }
+
+    .social-links {
+        max-width: none;
+        justify-content: center;
+    }
+
+    .hero-title h1 {
+        font-size: 2.8rem;
+        white-space: normal;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    .rotating-tiles {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .info-tile {
+        min-height: 250px;
+        padding: 2rem;
+    }
+
+    .tiles-controls {
+        position: relative;
+        right: 0;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-content {
+        width: calc(100% - 30px);
+        margin-left: 30px !important;
+        margin-right: 0 !important;
+    }
+
+    /* Remove section title after element */
+    .section-title::after {
+        display: none;
+    }
+
+    /* Center align highlights in row */
+    .highlights-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin: 0 auto;
+        max-width: 900px;
+    }
+
+    .highlight-card {
+        min-width: 250px;
+        flex: 0 0 auto;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero-split {
+        min-height: 50vh;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    /* Move menu button to right */
+    .navbar .container {
+        justify-content: space-between;
+        padding-right: 1rem;
+    }
+
+    .menu-btn {
+        margin-left: auto;
+    }
+
+    .hero-title h1 {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust info tiles for better content fit */
+    .info-tile {
+        min-height: 240px;
+        padding: 1rem;
+    }
+
+    .info-tile p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Position tile controls below content */
+    .tiles-controls {
+        display: block;
+        position: relative;
+        right: 0;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    .tile-control-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Convert highlights to vertical stack */
+    .highlights-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .highlight-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .highlight-card {
+        padding: 1.5rem;
+    }
+
+    .highlight-value {
+        font-size: 2rem;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .story-card {
+        padding: 1.5rem;
+        height: 400px;
+    }
+
+    .story-card.expanded {
+        height: auto;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-social {
+        max-width: none;
+        justify-content: center;
+    }
+
+    /* Remove section title after element */
+    .section-title::after {
+        display: none;
+    }
+
+    .section-title {
+        justify-content: center;
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .hero-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .info-tile {
+        min-height: 280px;
+    }
+
+    .social-pill span {
+        display: none;
+    }
+
+    .social-pill {
+        padding: 0.6rem;
+    }
+
+    .info-tile p {
+        font-size: 0.9rem;
+    }
+
+    .gradient {
+        --size: 400px;
+    }
 } 
