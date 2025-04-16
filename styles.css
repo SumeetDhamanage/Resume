@@ -72,7 +72,7 @@ body {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -2202,6 +2202,10 @@ footer {
 @media (max-width: 480px) {
     .hero-title h1 {
         font-size: 1.8rem;
+    }
+
+    .hero-title h2 {
+        font-size: 1.2rem;
     }
 
     .subtitle {
