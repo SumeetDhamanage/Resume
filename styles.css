@@ -317,6 +317,7 @@ body {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .timeline::before {
@@ -1776,7 +1777,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 4rem auto;
 }
 
 .highlight-card {
@@ -1839,6 +1840,7 @@ footer {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 0 1rem;
+        margin-bottom: 3rem;
     }
 
     .highlight-card {
