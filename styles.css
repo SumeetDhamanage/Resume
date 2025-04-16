@@ -34,6 +34,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
 }
 
 #particles-js {
@@ -42,6 +43,7 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    opacity: 0.6;
 }
 
 .container {
@@ -57,8 +59,10 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     height: var(--nav-height);
@@ -291,6 +295,7 @@ body {
     margin-bottom: 3rem;
     color: var(--primary);
     font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .section-number {
@@ -303,7 +308,7 @@ body {
     content: '';
     flex: 1;
     height: 1px;
-    background-color: var(--card-border);
+    background-color: var(--text);
     margin-left: 1rem;
 }
 
@@ -327,7 +332,7 @@ body {
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background-color: var(--timeline-line);
+    background-color: var(--text);
 }
 
 .timeline-item {
@@ -917,6 +922,7 @@ footer {
     text-decoration: none;
     transition: all 0.3s ease;
     width: fit-content;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .social-pill span {
@@ -1686,10 +1692,12 @@ footer {
     display: inline-block;
     padding: 0.25rem 0.75rem;
     margin: 0.25rem;
-    background-color: var(--dark);
-    border: 1px solid var(--accent);
+    background-color: rgba(0, 181, 184, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 181, 184, 0.3);
     border-radius: 20px;
-    color: var(--accent);
+    color: var(--primary);
     font-size: 0.9em;
     white-space: nowrap;
 }
@@ -1786,7 +1794,8 @@ footer {
 }
 
 .highlight-card {
-    background-color: rgba(0, 181, 184, 0.08);
+    background-color: rgba(0, 181, 184, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 2.5rem 2rem;
     display: flex;
@@ -1806,7 +1815,7 @@ footer {
     bottom: 0;
     background: radial-gradient(
         circle at center,
-        rgba(0, 181, 184, 0.15),
+        rgba(0, 181, 184, 0.2),
         transparent 70%
     );
     opacity: 0;
@@ -1855,4 +1864,116 @@ footer {
     .highlight-value {
         font-size: 2rem;
     }
+}
+
+/* Gradient Background */
+.gradient-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gradient {
+    --size: 1200px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 6));
+    background-image: linear-gradient(135deg, rgba(0, 245, 212, 0.3), rgba(255, 78, 205, 0.3));
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    position: absolute;
+}
+
+@media (min-width: 720px) {
+    .gradient {
+        --size: 800px;
+    }
+}
+
+/* Frosted Glass Effect for all cards */
+.highlight-card,
+.timeline-content,
+.story-card,
+.info-card,
+.contact-form-container,
+.footer-form,
+.info-tile {
+    background-color: rgba(30, 30, 30, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Enhance hover effects */
+.highlight-card:hover,
+.timeline-content:hover,
+.story-card:hover,
+.info-card:hover {
+    background-color: rgba(30, 30, 30, 0.8) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* Update navbar */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Enhance keyword pills visibility */
+.keyword-pill {
+    background-color: rgba(0, 181, 184, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 181, 184, 0.3);
+}
+
+/* Update specific card styles */
+.highlight-card::before {
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 181, 184, 0.2),
+        transparent 70%
+    );
+}
+
+/* Ensure content remains readable */
+.timeline-content h3,
+.story-card h3,
+.info-card h3 {
+    color: var(--primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhance section titles */
+.section-title {
+    color: var(--primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Update particles opacity */
+#particles-js {
+    opacity: 0.6;
 } 
