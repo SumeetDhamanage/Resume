@@ -337,6 +337,10 @@ body {
     animation: fadeIn 0.6s ease-out forwards;
 }
 
+.timeline-title{
+    color: var(--primary);
+}
+
 .timeline-content {
     position: relative;
     background-color: var(--card-bg);
@@ -1407,7 +1411,8 @@ footer {
     border-radius: 8px;
     padding: 2rem;
     height: 100%;
-    min-height: 200px;
+    min-height: 300px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
